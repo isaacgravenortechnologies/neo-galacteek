@@ -11,10 +11,12 @@ semantic agent for the distributed web
 Where
 =====
 
+**neo-galacteek** is developed on `on GitHub <https://github.com/isaacgravenortechnologies/neo-galacteek>`.
+
 **galacteek** is developed `on GitLab <https://gitlab.com/galacteek/galacteek>`_
 (`official website here <https://galacteek.gitlab.io>`_).
 
-`Matrix room <https://matrix.to/#/#galacteek:matrix.org>`_
+`Matrix room for galacteek <https://matrix.to/#/#galacteek:matrix.org>`_
 
 Installation
 ============
