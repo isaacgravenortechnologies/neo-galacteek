@@ -5,7 +5,7 @@
 
 .. image:: https://gitlab.com/galacteek/galacteek/badges/master/pipeline.svg
 
-**galacteek** is a multi-platform Qt5-based browser and
+**neo-galacteek** is a modern version of **galacteek**, which is a multi-platform Qt5-based browser and
 semantic agent for the distributed web
 
 Where
