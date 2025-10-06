@@ -1,20 +1,20 @@
 dists: sdist wheels
 
 sdist:
-	@python setup.py sdist
+	@python3 setup.py sdist
 
 bdist:
-	@python setup.py bdist
+	@python3 setup.py bdist
 
 wheels:
-	@python setup.py bdist_wheel
+	@python3 setup.py bdist_wheel
 
 FORCE:
 build: FORCE
-	@python setup.py build
+	@python3 setup.py build
 
 install: build
-	@python setup.py install
+	@python3 setup.py install
 
 flake:
 	@flake8 galacteek
@@ -26,10 +26,10 @@ upload: dists
 	twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
 
 themes:
-	@python setup.py build_ui --tasks=themes
+	@python3 setup.py build_ui --tasks=themes
 
 ui:
-	@python setup.py build_ui
+	@python3 setup.py build_ui
 
 flatpak:
 	flatpak-builder --force-clean --repo=flatpak-repo build-dir \

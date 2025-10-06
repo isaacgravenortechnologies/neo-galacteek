@@ -927,8 +927,8 @@ class IPFSWebView(QWebEngineView):
         )
         self.setPage(QWebEnginePage(self.webProfile, self))
         self.setMinimumSize(QSize(
-            self.app.desktopGeometry.width() / 8,
-            self.app.desktopGeometry.height() / 8
+            int(self.app.desktopGeometry.width() / 8),
+            int(self.app.desktopGeometry.height() / 8)
         ))
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
 
@@ -1175,12 +1175,12 @@ class MarkdownInputWidget(QWidget):
 
     def setMinSize(self):
         self.textEditUser.setMinimumSize(QSize(
-            self.app.desktopGeometry.width() / 3,
-            self.app.desktopGeometry.height() / 2)
+            int(self.app.desktopGeometry.width() / 3),
+            int(self.app.desktopGeometry.height() / 2))
         )
         self.textEditMarkdown.setMinimumSize(QSize(
-            self.app.desktopGeometry.width() / 3,
-            self.app.desktopGeometry.height() / 2)
+            int(self.app.desktopGeometry.width() / 3),
+            int(self.app.desktopGeometry.height() / 2))
         )
 
     def markdownText(self):

@@ -336,8 +336,8 @@ class BTCDonateDialog(BaseDialog):
         self._imageBuffer = None
 
         self.setMinimumSize(
-            self.app.desktopGeometry.width() / 2,
-            (2 * self.app.desktopGeometry.height()) / 3
+            int(self.app.desktopGeometry.width() / 2),
+            int((2 * self.app.desktopGeometry.height()) / 3)
         )
         self.setWindowTitle(iDonateBitcoin())
         self.changeQrCode(self.qrQrcPath)
@@ -592,7 +592,7 @@ class AddMultihashPyramidDialog(QDialog):
         self.nameLine.setFocus(Qt.OtherFocusReason)
 
         self.setMinimumWidth(
-            self.app.desktopGeometry.width() / 3
+            int(self.app.desktopGeometry.width() / 3)
         )
         self.setWindowIcon(getIcon('pyramid-aqua.png'))
 
@@ -988,7 +988,7 @@ class DownloadOpenObjectDialog(QDialog):
             self.choiceCombo.setCurrentIndex(1)
 
         label = QLabel(downloadUrl)
-        label.setMaximumWidth(self.app.desktopGeometry.width() / 2)
+        label.setMaximumWidth(int(self.app.desktopGeometry.width() / 2))
         label.setWordWrap(True)
         label.setStyleSheet(boldLabelStyle())
 
@@ -1070,7 +1070,7 @@ class NewSeedDialog(QDialog):
         self.ui.gridLayout.addWidget(self.iconSelector, 2, 1, Qt.AlignCenter)
 
         self.setMinimumWidth(
-            self.app.desktopGeometry.width() / 2
+            int(self.app.desktopGeometry.width() / 2)
         )
 
         self.setAcceptDrops(True)
@@ -1373,8 +1373,8 @@ class DefaultProgressDialog(QWidget):
 
     def resizeEvent(self, event):
         fWidth = (event.size().width() / 2) - 16
-        self.status.setFixedWidth(fWidth)
-        self.statusExtra.setFixedWidth(fWidth)
+        self.status.setFixedWidth(int(fWidth))
+        self.statusExtra.setFixedWidth(int(fWidth))
         super().resizeEvent(event)
 
     def statusAlignLeft(self):
@@ -1834,7 +1834,7 @@ class TorrentTransferDialog(QDialog):
         self.ui.finishButton.setEnabled(False)
         self.ui.finishButton.clicked.connect(self.accept)
         self.setMinimumWidth(
-            self.app.desktopGeometry.width() / 2
+            int(self.app.desktopGeometry.width() / 2)
         )
 
     async def cancelImport(self, *args):
@@ -1978,8 +1978,8 @@ class TextBrowserDialog(QDialog):
 
         self.setLayout(layout)
         self.setMinimumSize(
-            (2 * app.desktopGeometry.width()) / 3,
-            (2 * app.desktopGeometry.height()) / 3,
+            int((2 * app.desktopGeometry.width()) / 3),
+            int((2 * app.desktopGeometry.height()) / 3),
         )
 
         self.textBrowser = QTextBrowser(self)
@@ -2012,8 +2012,8 @@ class HTTPForwardDIDServiceAddDialog(BaseDialog):
         super().__init__(parent)
 
         self.setMinimumSize(
-            self.app.desktopGeometry.width() / 2,
-            self.app.desktopGeometry.height() / 3
+            int(self.app.desktopGeometry.width() / 2),
+            int(self.app.desktopGeometry.height() / 3)
         )
 
         self.ui.didServiceName.setValidator(

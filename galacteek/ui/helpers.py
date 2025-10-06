@@ -289,7 +289,7 @@ def messageBoxCreate(message, title=None):
     layout.addWidget(button)
     msgBox.setLayout(layout)
     msgBox.setMinimumSize(
-        app.desktopGeometry.width() / 3,
+        int(app.desktopGeometry.width() / 3),
         128
     )
 
@@ -326,7 +326,7 @@ def questionBoxCreate(message, title=None):
 
     msgBox.setLayout(layout)
     msgBox.setMinimumWidth(
-        app.desktopGeometry.width() / 3
+        int(app.desktopGeometry.width() / 3)
     )
     msgBox.setWindowTitle(title if title else 'galacteek: Question')
 

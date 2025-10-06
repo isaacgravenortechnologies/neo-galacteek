@@ -622,7 +622,7 @@ class MessengerWidget(QWidget):
     def resizeEventNo(self, event):
         try:
             for _addr, view in self.messageBoxViews.items():
-                view.setMaximumWidth(self.width() / 3)
+                view.setMaximumWidth(int(self.width() / 3))
         except Exception:
             pass
 

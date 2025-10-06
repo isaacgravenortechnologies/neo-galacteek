@@ -291,9 +291,9 @@ class MFSTreeView(QTreeView):
 
     def resizeEvent(self, event):
         self.header().setMinimumSectionSize(
-            self.size().width() / 3)
+            int(self.size().width() / 3))
         self.header().setMaximumSectionSize(
-            self.size().width() / 2)
+            int(self.size().width() / 2))
         super().resizeEvent(event)
 
     def recursiveExpand(self, index, expand):

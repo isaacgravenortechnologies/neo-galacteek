@@ -89,14 +89,14 @@ class AtomFeedsView(QWidget):
             self.onContextMenu)
 
         self.ui.treeFeeds.setMinimumWidth(
-            self.desktopGeometry.width() / 3,
+            int(self.desktopGeometry.width() / 3),
         )
         self.ui.treeFeeds.setMaximumSize(QSize(
-            self.desktopGeometry.width() / 2,
-            self.desktopGeometry.height())
+            int(self.desktopGeometry.width() / 2),
+            int(self.desktopGeometry.height()))
         )
         self.webView.setMinimumWidth(
-            self.desktopGeometry.width() / 2
+            int(self.desktopGeometry.width() / 2)
         )
 
         self.model.feedEntryAdded.connect(self.onEntryAdded)

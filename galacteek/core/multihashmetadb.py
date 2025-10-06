@@ -17,8 +17,7 @@ class IPFSObjectMetadataDatabase:
 
     def __init__(self, metaDbPath, loop=None):
         self._metaDbPath = metaDbPath
-        self._lock = asyncio.Lock(
-            loop=loop if loop else asyncio.get_event_loop())
+        self._lock = asyncio.Lock()
 
     @property
     def metaDbPath(self):

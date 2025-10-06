@@ -24,7 +24,7 @@ colorhash==1.1.0
 colour==0.1.5
 feedgen==0.9.0
 feedparser==6.0.10
-frozendict==1.2
+frozendict>=1.2
 filelock==3.8.0
 gitpython==3.1.27
 html2text==2020.1.16

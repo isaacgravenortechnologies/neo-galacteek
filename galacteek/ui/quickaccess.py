@@ -52,7 +52,7 @@ class QuickAccessToolBar(SmartToolBar,
         self.toolbarPyramids = None
         self.app = QCoreApplication.instance()
         self.analyzer = self.app.rscAnalyzer
-        self.lock = asyncio.Lock(loop=self.app.loop)
+        self.lock = asyncio.Lock()
 
         self.graphsListener = GraphActivityListener(
             watch=['urn:ipg:i:love:hashmarks']

@@ -122,13 +122,13 @@ class PinStatusWidget(QWidget):
 
     def calibrate(self):
         self.setMinimumSize(
-            0.7 * self.app.desktopGeometry.width(),
-            0.5 * self.app.desktopGeometry.height()
+            int(0.7 * self.app.desktopGeometry.width()),
+            int(0.5 * self.app.desktopGeometry.height())
         )
 
         self.setMaximumSize(
-            0.8 * self.app.desktopGeometry.width(),
-            0.6 * self.app.desktopGeometry.height()
+            int(0.8 * self.app.desktopGeometry.width()),
+            int(0.6 * self.app.desktopGeometry.height())
         )
 
     def resort(self):

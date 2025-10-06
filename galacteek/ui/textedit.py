@@ -723,7 +723,7 @@ class TextEditorWidget(QWidget,
         self.editing = editing
         self.rootMultihashChanged.connect(self.onSessionCidChanged)
 
-        self.filesView.setMinimumWidth(self.width() / 4)
+        self.filesView.setMinimumWidth(int(self.width() / 4))
 
         self.textEditor.setSizePolicy(
             QSizePolicy.Expanding, QSizePolicy.Expanding)
@@ -1242,8 +1242,8 @@ class TextEditorWidget(QWidget,
         dlg.setWindowFlag(Qt.WindowMaximizeButtonHint, True)
         dlg.setWindowFlag(Qt.WindowCloseButtonHint, True)
         dlg.setMinimumSize(
-            (2 * self.app.desktopGeometry.width()) / 3,
-            (2 * self.app.desktopGeometry.height()) / 3,
+            int((2 * self.app.desktopGeometry.width()) / 3),
+            int((2 * self.app.desktopGeometry.height()) / 3),
         )
 
         dBrowser = QTextBrowser(dlg)

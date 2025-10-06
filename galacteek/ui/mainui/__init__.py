@@ -161,7 +161,7 @@ class IPFSDaemonStatusWidget(QWidget):
         self.ui.bwRateStatsLayout.addWidget(bwStatsView)
         self.ui.peersStatsLayout.addWidget(peersStatsView)
 
-        self.setMinimumWidth(self.app.desktopGeometry.width() / 2)
+        self.setMinimumWidth(int(self.app.desktopGeometry.width() / 2))
         self.ui.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.ui.tabWidget.setStyleSheet(
             "QTabWidget::pane { background-color: lightgray; }")
@@ -526,10 +526,7 @@ class MainWindow(QMainWindow, KeyListener):
         self.menuBar().hide()
 
         # Seems reasonable
-        self.setMinimumSize(QSize(
-            self.app.desktopGeometry.width() / 2,
-            self.app.desktopGeometry.height() / 2)
-        )
+        self.setMinimumSize(QSize(100, 100))
 
         # Prevent context menus on the main window (otherwise
         # the toolbars get the context menu on right click)
@@ -541,9 +538,9 @@ class MainWindow(QMainWindow, KeyListener):
         self.logsPopupWindow.setWindowTitle('{}: logs'.format(GALACTEEK_NAME))
         self.logsPopupWindow.hide()
 
-        self.logsPopupWindow.setMinimumSize(QSize(
-            (2 * self.app.desktopGeometry.width()) / 3,
-            self.app.desktopGeometry.height() / 2
+        self.logsPopupWindow.setMinimumSize(QSize(int(
+            (2 * self.app.desktopGeometry.width()) / 3),
+            int(self.app.desktopGeometry.height() / 2)
         ))
 
         self.userLogsHandler = MainWindowLogHandler(

@@ -160,8 +160,8 @@ class TorrentAddingDialog(QDialog):
         self.setWindowTitle('Add Torrent')
 
         self.setMinimumSize(QSize(
-            self.app.desktopGeometry.width() / 3,
-            (2 * self.app.desktopGeometry.height()) / 3
+            int(self.app.desktopGeometry.width() / 3),
+            int((2 * self.app.desktopGeometry.height()) / 3)
         ))
 
     def get_directory(self, directory: Optional[str]):

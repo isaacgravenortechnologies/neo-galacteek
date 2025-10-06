@@ -671,12 +671,12 @@ class ChatBotSessionTab(GalacteekTab):
 
             if status == QQuickWidget.Ready:
                 qmlw.setMinimumSize(QSize(
-                    self.disc.width() * 0.8,
-                    self.ui.scrollArea.height() * 0.5
+                    int(self.disc.width() * 0.8),
+                    int(self.ui.scrollArea.height() * 0.5)
                 ))
                 qmlw.setMinimumSize(QSize(
-                    self.disc.width() * 0.9,
-                    self.ui.scrollArea.height() * 0.7
+                    int(self.disc.width() * 0.9),
+                    int(self.ui.scrollArea.height() * 0.7)
                 ))
 
                 qa.showQmlProgram(qmlw)

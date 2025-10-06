@@ -406,7 +406,7 @@ class SettingsCenterTab(GalacteekTab,
             self.loadModules()
 
     def resizeEvent(self, event):
-        self.ui.sModules.setFixedWidth(0.25 * event.size().width())
+        self.ui.sModules.setFixedWidth(int(0.25 * event.size().width()))
 
     def onModuleClicked(self, item):
         widget = item.data(SettingsModWidgetRole)

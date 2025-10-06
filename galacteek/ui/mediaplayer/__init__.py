@@ -328,7 +328,7 @@ class MediaPlayerTab(GalacteekTab, KeyListener):
         self.pListView.mousePressEvent = self.playlistMousePressEvent
         self.pListView.setModel(self.model)
         self.pListView.setResizeMode(QListView.Adjust)
-        self.pListView.setMinimumWidth(self.width() / 2)
+        self.pListView.setMinimumWidth(int(self.width() / 2))
 
         self.uipList.ldSearchView.setModel(self.searchModel)
 

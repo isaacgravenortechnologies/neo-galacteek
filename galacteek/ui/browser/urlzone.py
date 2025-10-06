@@ -339,8 +339,8 @@ class URLInputWidget(QWidget):
 
     def setBoundaries(self):
         self.contentSearch.setMinimumSize(
-            self.width(),
-            0.3 * self.app.desktopGeometry.height()
+            int(self.width()),
+            int(0.3 * self.app.desktopGeometry.height())
         )
 
         self.contentSearch.setMaximumSize(

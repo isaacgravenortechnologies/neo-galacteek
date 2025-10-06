@@ -174,7 +174,7 @@ class build_ui(Command):
         tasks = self.tasks.split(',')
 
         if self.uiforms:
-            uifiles = [formsdir.joinpath(f'{form}.ui') for form
+            uifiles = [formsdir.joinpath(form+'.ui') for form
                        in self.uiforms.split(',')]
         else:
             uifiles = formsdir.glob('*.ui')
@@ -207,9 +207,9 @@ class build_ui(Command):
             for lang in ['en', 'es', 'fr']:
                 if lrelease:
                     run([lrelease,
-                         str(trdir.joinpath(f'galacteek_{lang}.ts')),
+                         str(trdir.joinpath('galacteek_'+lang+'.ts')),
                          '-qm',
-                         str(trdir.joinpath(f'galacteek_{lang}.qm'))])
+                         str(trdir.joinpath('galacteek_'+lang+'.qm'))])
                 else:
                     print('lrelease was not found'
                           ', cannot build translation files')
@@ -237,17 +237,17 @@ class build_logo(Command):
         logo = 'share/logos/galacteek.png'
 
         os.system(
-            f'convert {logo} -resize 50% '
+            'convert '+logo+' -resize 50% '
             'share/icons/galacteek.png'
         )
 
         os.system(
-            f'convert {logo} -resize 25% '
+            'convert '+logo+' -resize 25% '
             'share/icons/galacteek-128.png'
         )
 
         os.system(
-            f'convert {logo} -resize 50% '
+            'convert '+logo+' -resize 50% '
             'share/icons/galacteek.ico'
         )
 
@@ -280,12 +280,12 @@ class vbump(Command):
         assert v.version[2] is not None
 
         with open('galacteek/VERSION', 'wt') as f:
-            f.write(f'{self.version}\n')
+            f.write(self.version+'\n')
 
         os.system('git add galacteek/VERSION')
 
         with open('galacteek/__version__.py', 'wt') as f:
-            f.write(f"__version__ = '{self.version}'\n")
+            f.write("__version__ = '"+self.version+"'\n")
 
         os.system('git add galacteek/__version__.py')
 
@@ -294,17 +294,17 @@ class vbump(Command):
             data = f.read()
             data = re.sub(
                 r'(\!define VERSIONMAJOR) (\d*)',
-                rf'\1 {v.version[0]}',
+                r'\1 '+v.version[0],
                 data
             )
             data = re.sub(
                 r'(\!define VERSIONMINOR) (\d*)',
-                rf'\1 {v.version[1]}',
+                r'\1 '+v.version[1],
                 data
             )
             data = re.sub(
                 r'(\!define VERSIONBUILD) (\d*)',
-                rf'\1 {v.version[2]}',
+                r'\1 '+v.version[2],
                 data
             )
 

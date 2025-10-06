@@ -168,8 +168,8 @@ class PubsubSnifferWidget(GalacteekTab):
         layout = QVBoxLayout()
         dlg.setLayout(layout)
         dlg.setMinimumSize(
-            (2 * self.app.desktopGeometry.width()) / 3,
-            (2 * self.app.desktopGeometry.height()) / 3,
+            int((2 * self.app.desktopGeometry.width()) / 3),
+            int((2 * self.app.desktopGeometry.height()) / 3),
         )
 
         msgView = QTextBrowser(dlg)

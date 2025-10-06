@@ -396,7 +396,7 @@ async def cancelAllTasks(*, timeout=None, raise_timeout_error=False):
     for t in running:
         t.cancel()
 
-    for f in asyncio.as_completed(running, timeout=timeout, loop=loop):
+    for f in asyncio.as_completed(running, timeout=timeout):
         try:
             await f
         except asyncio.CancelledError:

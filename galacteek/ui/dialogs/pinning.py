@@ -49,7 +49,7 @@ class PinningServiceAddDialog(BaseDialog):
         self.providerReact(self.ui.provider.currentText())
 
         self.setMaximumWidth(
-            0.7 * self.app.desktopGeometry.width()
+            int(0.7 * self.app.desktopGeometry.width())
         )
 
     def onProviderChanged(self, provName):

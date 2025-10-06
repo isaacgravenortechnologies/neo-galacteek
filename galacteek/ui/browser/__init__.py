@@ -150,8 +150,8 @@ class JSConsoleWidget(QWidget):
         self.log('<p><b>Javascript output console</b></p>')
 
         self.setMinimumSize(
-            app.desktopGeometry.width() * 0.6,
-            app.desktopGeometry.height() * 0.8,
+            int(app.desktopGeometry.width() * 0.6),
+            int(app.desktopGeometry.height() * 0.8),
         )
 
     def onClose(self):

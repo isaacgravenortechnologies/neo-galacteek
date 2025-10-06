@@ -441,8 +441,8 @@ class HashmarkIPTagsDialog(QDialog):
         self.ui.noTagsButton.clicked.connect(self.reject)
 
         self.setMinimumSize(
-            self.app.desktopGeometry.width() * 0.7,
-            self.app.desktopGeometry.height() * 0.8,
+            int(self.app.desktopGeometry.width() * 0.7),
+            int(self.app.desktopGeometry.height() * 0.8),
         )
 
         self.ldSearcher.setFocus(Qt.OtherFocusReason)
@@ -875,8 +875,8 @@ class IPTagsSelectDialog(QDialog):
         self.ui.noTagsButton.clicked.connect(self.reject)
 
         self.setMinimumSize(
-            self.app.desktopGeometry.width() * 0.7,
-            self.app.desktopGeometry.height() * 0.8,
+            int(self.app.desktopGeometry.width() * 0.7),
+            int(self.app.desktopGeometry.height() * 0.8),
         )
 
     @property
